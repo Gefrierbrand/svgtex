@@ -6,6 +6,7 @@ var args = system.args;
 var server = require('webserver').create();
 var page = require('webpage').create();
 var fs = require('fs');
+var path = fs.absolute(args[0]).replace(/main.js/,'');
 
 var usage =
   'Usage: phantomjs main.js [options]\n' +
@@ -20,7 +21,7 @@ var usage =
 
 var port = 16000;
 var requests_to_serve = -1;
-var bench_page = 'index.html';
+var bench_page = path+'index.html';
 var debug = false;
 
 // Parse command-line options.  This keeps track of which one we are on
@@ -122,14 +123,16 @@ while (arg_num < args.length) {
   break;
 }
 
-/*
+if (debug === true) {
   console.log(
-    'port = ' + port + ", " +
-    'requests_to_serve = ' + requests_to_serve + ", " +
-    'bench_page = ' + bench_page + ", " +
-    'debug = ' + debug + "\n"
+    'current settings: \n' +
+    'port = ' + port + ", \n" +
+    'requests_to_serve = ' + requests_to_serve + ", \n" +
+    'bench_page = ' + bench_page + ", \n" +
+    'debug = ' + debug + "\n" +
+    'path = '+ path + "\n"
   );
-*/
+}
 
 // activeRequests holds information about any active MathJax requests.  It is
 // a hash, with a sequential number as the key.  request_num gets incremented
@@ -141,7 +144,7 @@ var activeRequests = {};
 
 // This will hold the test HTML form, which is read once, the first time it is
 // requested, from test.html.
-var test_form_filename = 'test.html';
+var test_form_filename = path+'form.html';
 var test_form = null;
 
 var service = null;
