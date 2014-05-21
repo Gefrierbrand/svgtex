@@ -3,10 +3,11 @@ This file is loaded from main.js (phantomjs).
 -->
 <html>
     <head>
+        <title>SVGTEX</title>
         <script type="text/x-mathjax-config">
           MathJax.Hub.Config({
-            showProcessingMessages: false,
-            messageStyle: "none",
+            showProcessingMessages: true,
+            messageStyle: "normal",
             tex2jax: {
               inlineMath: [["$", "$"], ["\\(", "\\)"]]
             },
@@ -14,16 +15,12 @@ This file is loaded from main.js (phantomjs).
               linebreaks: {
                 automatic: true,
                 width: "container"
-              }
+              },
+              blacker: 0.1,
             }
           });
         </script>
-        <!-- gets automatically changes by PHP before starting svgTeX -->
-        <script type="text/x-mathjax-config" id="autoconfig">
-            MathJax.Hub.Config({SVG:{font: "TeX"}});
-        </script>
-
-        <script type="text/javascript" src="../MathJax/MathJax.js?config=TeX-AMS-MML_SVG"></script>
+        <script type="text/javascript" src="../MathJax/MathJax.js?config=TeX-AMS-MML_SVG,local/font"></script>
         <!--
             <script type="text/javascript"
               src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">

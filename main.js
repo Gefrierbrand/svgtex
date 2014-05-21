@@ -349,7 +349,7 @@ function listenLoop() {
     }
     else {
         console.log("Server started on port " + port);
-        console.log("Point your brownser at http://localhost:" + port + " for a test form.");
+        //console.log("Point your brownser at http://localhost:" + port + " for a test form.");
     }
 }
 
