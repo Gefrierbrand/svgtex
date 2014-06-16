@@ -1,0 +1,19 @@
+{
+    "name": "flatplane/svgtex",
+    "type": "library",
+    "description": "Using MathJax and PhantomJS to create SVGs on server side with minimum overhead.",
+    "keywords": ["MathJax", "SVG", "PhantomJs"],
+    "homepage": "https://github.com/Gefrierbrand/svgtex",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Grbin",
+            "homepage": "https://github.com/agrbin/svgtex"
+        },
+        {
+            "name": "Nikolai Neff",
+            "email": "admin@flatplane.de",
+            "homepage": "https://flatplane.de"
+        }
+    ]
+}
